@@ -10,7 +10,7 @@ class BSBoard {
             "Submarine   ",
             "Destroyer   " };
     String[] fleetHeads = { "(5p) ", "(4p) ", "(3p) ", "(3p) ", "(2p) " };
-    String[] compHeads  = { "?  ", "?  ", "?  ", "?  ", "?  " };
+    String[] compHeads  = { "(5p) ", "(4p) ", "(3p) ", "(3p) ", "(2p) " };
     String[] scrtHeads = { "?  ", "?  ", "?  ", "?  ", "?  " };
     boolean begin = false;
     boolean win = false;

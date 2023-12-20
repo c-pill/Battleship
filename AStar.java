@@ -1,3 +1,5 @@
+// unfinished version of AStar used to add style. Finished work can be found in AStar repository
+
 class AStar {
     String[][] stars;
 

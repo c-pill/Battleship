@@ -39,6 +39,9 @@ class BSView
                     System.out.print("\t\ta : attack");
                 if (i == 2)
                     System.out.print("\t\tf : forfeit");
+                if (i == 3)
+                    System.out.print("\t\ts : ship sizes");
+
             }
             System.out.println();
         }
@@ -101,7 +104,9 @@ class BSView
                 System.out.print("\t\ta : attack");
             if (i == 2)
                 System.out.print("\t\tf : forfeit");
-            if (i == 4)
+            if (i == 3)
+                System.out.print("\t\ts : ship sizes");
+            if (i == 5)
                 System.out.print("\t   Testing Commands:");
             if (i == 6)
                 System.out.print("\t\tr : testing pov");

@@ -1,4 +1,4 @@
-class Fleet
+class Fleet extends Battleships
 {
     Carrier carry;
     Battleship battle;

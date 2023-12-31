@@ -13,6 +13,7 @@ class BSPlay extends Fleet {
         nextGuess = "";
         lastHit = "";
         nextDir = ' ';
+        board.compHeads = new String[] { "?  ", "?  ", "?  ", "?  ", "?  " };
         board.compViewFleet = new char[] { 'o', 'o', 'o', 'o', 'o' };
         board.compScrtFleet = new char[] { 'o', 'o', 'o', 'o', 'o' };
         board.userFleet = new char[] { 'o', 'o', 'o', 'o', 'o' };
@@ -24,7 +25,7 @@ class BSPlay extends Fleet {
         int x = pos.toUpperCase().charAt(0) - '0' - 17;
         int y = pos.charAt(1) - '0' - 1;
         boolean inGrid = x + y < 17 && x < 9 && y < 9 && x >= 0 && y >= 0;
-        if (!inGrid)
+        if (!inGrid || pos.length() != 2)
             return false;
         System.out.print(pos.toUpperCase() + "... ");
         if (board.compScrt[8 - y][x] == 'X') {
@@ -87,7 +88,7 @@ class BSPlay extends Fleet {
             board.compScrt[8 - y][x] = 'o';
             board.compView[8 - y][x] = 'o';
             System.out.println("Miss!");
-            return false;
+            return true;
         }
     }
 

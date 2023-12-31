@@ -14,7 +14,7 @@ class BSSetup {
     // pos on board, type of ship, direction, set for comp (true) or user (false), q
     // for quiet (no prints if true)
     boolean setShips(String pos, String ship, String dir, boolean v, boolean q) {
-        if (pos.length() > 2 && !q) {
+        if (pos.length() != 2 && !q) {
             System.out.println("\t- Position is not on the board");
             return false;
         }
@@ -91,10 +91,13 @@ class BSSetup {
         return false;
     }
 
-    // removes ship from user's board based on user input
-    void removeShip(String pos) {
+    // removes ship from user's board based on user input. returns true if successful, false if not
+    boolean removeShip(String pos) {
         int x = pos.toUpperCase().charAt(0) - '0' - 17;
         int y = pos.charAt(1) - '0' - 1;
+        boolean inGrid = x + y < 17 && x < 9 && y < 9 && x >= 0 && y >= 0;
+        if (!inGrid || pos.length() != 2)
+            return false;
         int p = 0;
         char dir = ' ';
         for (int i = 0; i < 5; i++) {
@@ -138,9 +141,10 @@ class BSSetup {
                     else
                         board.user[8 - y][x + k] = '-';
                 }
-                break;
+                return true;
             }
         }
+        return false;
     }
     
     // resets board and fleet
